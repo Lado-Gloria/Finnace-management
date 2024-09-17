@@ -1,0 +1,102 @@
+/* App.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.App {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"], 
+input[type="number"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button:active {
+  background-color: #1e7e34;
+}
+
+button:focus {
+  outline: none;
+}
+
+div[data-type="transaction"] {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  border-left: 5px solid #17a2b8;
+  transition: background-color 0.3s ease;
+}
+
+div[data-type="transaction"]:hover {
+  background-color: #d6d8db;
+}
+
+div[data-type="transaction"]:nth-child(even) {
+  background-color: #f1f3f5;
+}
+
+div[data-type="transaction"] p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
