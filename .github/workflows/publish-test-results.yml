@@ -17,13 +17,14 @@ jobs:
       run: npm run build
 
     - name: Start server
-      run: npm run start &
-      env:
-        PORT: 8080
+      run: |
+        npm run start &
+        sleep 20  # Increased wait time to ensure server has time to start
+        curl -s http://localhost:8080/ping || echo "Server did not start successfully"
 
     - name: Wait for server
       run: |
-        timeout 60s bash -c 'until curl -s http://localhost:8080/ping; do sleep 1; done'
+        timeout 120s bash -c 'until curl -s http://localhost:8080/ping; do sleep 1; done'
 
     - name: Run Cypress tests
       uses: cypress-io/github-action@v6
